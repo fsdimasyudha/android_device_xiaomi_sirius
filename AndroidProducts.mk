@@ -15,3 +15,8 @@
 
 PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/xtended_sirius.mk
+
+COMMON_LUNCH_CHOICES := \
+    xtended_sirius-eng \
+    xtended_sirius-user \
+    xtended_sirius-userdebug
