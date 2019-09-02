@@ -4,6 +4,7 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+DEVICE_PATH := device/xiaomi/sirius
 BOARD_VENDOR := xiaomi
 
 BUILD_BROKEN_DUP_RULES := true
