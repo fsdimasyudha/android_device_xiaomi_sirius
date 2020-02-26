@@ -170,3 +170,6 @@ vendor.gatekeeper.disable_spu=true
 vendor.power.pasr.enabled=true
 vendor.qcom.bluetooth.soc=cherokee
 vendor.voice.path.for.pcm.voip=true
+
+# Fastbootd
+ro.fastbootd.available=true
