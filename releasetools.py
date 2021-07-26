@@ -17,6 +17,13 @@
 import common
 import re
 
+def FullOTA_InstallBegin(info):
+  AddImage(info, "RADIO", "super_dummy.img", "/tmp/super_dummy.img");
+  info.script.AppendExtra('package_extract_file("install/bin/super_empty.sh", "/tmp/super_empty.sh");')
+  info.script.AppendExtra('set_metadata("/tmp/super_empty.sh", "uid", 0, "gid", 0, "mode", 0755);')
+  info.script.AppendExtra('run_program("/tmp/super_empty.sh");')
+  return
+
 def FullOTA_InstallEnd(info):
   OTA_InstallEnd(info)
   return
@@ -25,8 +32,8 @@ def IncrementalOTA_InstallEnd(info):
   OTA_InstallEnd(info)
   return
 
-def AddImage(info, basename, dest):
-  path = "IMAGES/" + basename
+def AddImage(info, dir, basename, dest):
+  path = dir + "/" + basename
   if path not in info.input_zip.namelist():
     return
 
@@ -36,6 +43,6 @@ def AddImage(info, basename, dest):
 
 def OTA_InstallEnd(info):
   info.script.Print("Patching firmware images...")
-  AddImage(info, "vbmeta.img", "/dev/block/bootdevice/by-name/vbmeta")
-  AddImage(info, "dtbo.img", "/dev/block/bootdevice/by-name/dtbo")
+  AddImage(info, "IMAGES", "vbmeta.img", "/dev/block/bootdevice/by-name/vbmeta")
+  AddImage(info, "IMAGES", "dtbo.img", "/dev/block/bootdevice/by-name/dtbo")
   return

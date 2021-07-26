@@ -183,6 +183,9 @@ PRODUCT_PACKAGES += \
     android.hardware.drm@1.4-service.clearkey
 
 # Dynamic Partitions
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/super_empty.sh:install/bin/super_empty.sh
+
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 PRODUCT_RETROFIT_DYNAMIC_PARTITIONS := true
 
