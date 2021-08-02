@@ -4,6 +4,9 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+# APEX
+OVERRIDE_TARGET_FLATTEN_APEX := true
+
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := sdm710
 
