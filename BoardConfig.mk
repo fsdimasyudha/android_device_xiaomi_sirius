@@ -4,6 +4,9 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+# Bootloader
+TARGET_BOOTLOADER_BOARD_NAME := sdm710
+
 # Display
 TARGET_SCREEN_DENSITY := 440
 
@@ -11,6 +14,9 @@ TARGET_SCREEN_DENSITY := 440
 DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/manifest.xml
 DEVICE_MATRIX_FILE := $(DEVICE_PATH)/compatibility_matrix.xml
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := $(DEVICE_PATH)/framework_compatibility_matrix.xml
+
+# Platform
+TARGET_BOARD_PLATFORM := sdm710
 
 # Properties
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
