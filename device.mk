@@ -173,6 +173,11 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libqti_vndfwk_detect.vendor
 
+# RIL
+PRODUCT_PACKAGES += \
+    libjson \
+    librmnetctl
+
 # Rootdir
 PRODUCT_PACKAGES += \
     capture.sh \
