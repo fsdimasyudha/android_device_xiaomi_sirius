@@ -10,5 +10,11 @@
     "repository": "fsdimasyudha/kernel_xiaomi_sirius",
     "branch": "lineage-17.1",
     "target_path": "kernel/xiaomi/sirius"
+  },
+  {
+    "remote": "gitlab",
+    "repository": "Jprimero15/lolz_clang",
+    "branch": "main",
+    "target_path": "prebuilts/clang/host/linux-x86/clang-lolz"
   }
 ]
