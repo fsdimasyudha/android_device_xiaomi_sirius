@@ -37,11 +37,13 @@ int open_ts_input() {
 
                 fd = open(absolute_path, O_RDWR);
                 if (ioctl(fd, EVIOCGNAME(sizeof(name) - 1), &name) > 0) {
-                    if (strcmp(name, "atmel_mxt_ts") == 0 || strcmp(name, "fts_ts") == 0 ||
-                            strcmp(name, "fts") == 0 || strcmp(name, "ft5x46") == 0 ||
-                            strcmp(name, "synaptics_dsx") == 0 ||
-                            strcmp(name, "NVTCapacitiveTouchScreen") == 0)
-                        break;
+                    if (strcmp(name, "atmel_mxt_ts") == 0 ||
+                        strcmp(name, "fts_ts") == 0 ||
+                        strcmp(name, "fts") == 0 ||
+                        strcmp(name, "ft5x46") == 0 ||
+                        strcmp(name, "synaptics_dsx") == 0 ||
+                        strcmp(name, "NVTCapacitiveTouchScreen") == 0)
+                    break;
                 }
 
                 close(fd);
@@ -57,11 +59,10 @@ int open_ts_input() {
 }  // anonymous namespace
 
 namespace aidl {
-namespace google {
+namespace android {
 namespace hardware {
 namespace power {
 namespace impl {
-namespace pixel {
 
 static constexpr int kInputEventWakeupModeOff = 4;
 static constexpr int kInputEventWakeupModeOn = 5;
@@ -100,9 +101,8 @@ bool setDeviceSpecificMode(Mode type, bool enabled) {
     }
 }
 
-}  // namespace pixel
 }  // namespace impl
 }  // namespace power
 }  // namespace hardware
-}  // namespace google
+}  // namespace android
 }  // namespace aidl

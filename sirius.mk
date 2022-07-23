@@ -31,7 +31,7 @@ PRODUCT_COPY_FILES += \
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
-    $(LOCAL_PATH)/overlay-lineage
+    $(LOCAL_PATH)/overlay-nyanpasu
 
 PRODUCT_ENFORCE_RRO_TARGETS := *
 
@@ -151,6 +151,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libsuspend
 
+# ConfigStore
+PRODUCT_PACKAGES += \
+    vendor.qti.hardware.capabilityconfigstore@1.0.vendor
+
 # Control groups and task profiles
 PRODUCT_COPY_FILES += \
     system/core/libprocessgroup/profiles/cgroups_28.json:$(TARGET_COPY_OUT_VENDOR)/etc/cgroups.json \
@@ -199,6 +203,9 @@ PRODUCT_PACKAGES += \
     vendor.display.config@2.0 \
     vendor.qti.hardware.display.allocator@1.0-service
 
+PRODUCT_PACKAGES += \
+    libdisplaydebug.vendor \
+
 # DRM
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.0-impl \
@@ -241,8 +248,6 @@ PRODUCT_PACKAGES += \
 # HIDL
 PRODUCT_PACKAGES += \
     android.hidl.allocator@1.0.vendor \
-    android.hidl.base@1.0 \
-    android.hidl.base@1.0.vendor \
     android.hidl.memory@1.0.vendor \
     libhidltransport \
     libhidltransport.vendor \
@@ -293,11 +298,6 @@ PRODUCT_PACKAGES += \
     android.hardware.light@2.0.vendor \
     android.hardware.light@2.0-service.xiaomi_sirius
 
-# LiveDisplay
-PRODUCT_PACKAGES += \
-    vendor.lineage.livedisplay@2.0-service-sdm \
-    vendor.lineage.livedisplay@2.0-service.xiaomi_sirius
-
 # Media
 PRODUCT_PACKAGES += \
     libavservices_minijail \
@@ -336,17 +336,16 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.neuralnetworks@1.2.vendor
 
-# Perfd (dummy)
-PRODUCT_PACKAGES += \
-    libqti-perfd-client
+# Platform
+TARGET_BOARD_PLATFORM := sdm710
 
 # Power
 PRODUCT_PACKAGES += \
-    android.hardware.power@1.2.vendor \
-    android.hardware.power-service.xiaomi-libperfmgr
+    android.hardware.power-service \
+    vendor.qti.hardware.perf@2.2.vendor
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/power/configs/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
+    $(LOCAL_PATH)/power/configs/powerhint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.xml
 
 # Protobuf
 PRODUCT_PACKAGES += \
@@ -358,11 +357,16 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt
 
 # QTI
-PRODUCT_PACKAGES += \
-    libqti_vndfwk_detect.vendor
+TARGET_COMMON_QTI_COMPONENTS := \
+    av \
+    bt \
+    display \
+    perf \
+    telephony \
+    usb \
+    wfd
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/qti_whitelist.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/qti_whitelist.xml \
     $(LOCAL_PATH)/permissions/system_ext-privapp-permissions-qti.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/privapp-permissions-qti.xml
 
 # Radio
@@ -383,10 +387,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.renderscript@1.0-impl
 
-# Seccomp policy
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/seccomp/mediacodec-seccomp.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediacodec.policy
-
 # Sensors
 PRODUCT_PACKAGES += \
     android.hardware.sensors@1.0-impl \
@@ -395,30 +395,11 @@ PRODUCT_PACKAGES += \
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
-    $(LOCAL_PATH) \
-    hardware/google/interfaces \
-    hardware/google/pixel \
-    hardware/xiaomi \
-    vendor/qcom/opensource/usb/etc
-
-# Telephony
-PRODUCT_PACKAGES += \
-    qti-telephony-hidl-wrapper \
-    qti_telephony_hidl_wrapper.xml \
-    qti-telephony-utils \
-    qti_telephony_utils.xml \
-    telephony-ext
-
-PRODUCT_BOOT_JARS += \
-    telephony-ext
+    $(LOCAL_PATH)
 
 # Tethering
 PRODUCT_PACKAGES += \
     TetheringConfigOverlay
-
-# Trust HAL
-PRODUCT_PACKAGES += \
-    vendor.lineage.trust@1.0-service
 
 # USB
 PRODUCT_PACKAGES += \
