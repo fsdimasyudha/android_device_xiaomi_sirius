@@ -1,0 +1,14 @@
+[
+  {
+    "remote": "github",
+    "repository": "fsdimasyudha/vendor_xiaomi_sirius",
+    "branch": "lineage-17.1",
+    "target_path": "vendor/xiaomi/sirius"
+  },
+  {
+    "remote": "github",
+    "repository": "fsdimasyudha/kernel_xiaomi_sirius",
+    "branch": "lineage-17.1",
+    "target_path": "kernel/xiaomi/sirius"
+  }
+]
