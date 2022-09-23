@@ -10,7 +10,7 @@ $(call inherit-product, device/xiaomi/sirius/device.mk)
 TARGET_BOOT_ANIMATION_RES := 1080
 
 # Inherit some common Lineage stuff.
-$(call inherit-product, vendor/xtended/build/target/nekomimi.mk)
+$(call inherit-product, vendor/xtended/config/common_full_phone.mk)
 
 # Device identifier. This must come after all inclusions.
 PRODUCT_NAME := xtended_sirius
