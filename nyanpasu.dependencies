@@ -1,0 +1,32 @@
+[
+    {
+        "remote":       "nyanpasu",
+        "repository":   "kernel_xiaomi_sirius",
+        "target_path":  "kernel/xiaomi/sirius",
+        "revision":     "timobaka"
+    },
+    {
+        "remote":       "blobs",
+        "repository":   "proprietary_vendor_xiaomi_sirius",
+        "target_path":  "vendor/xiaomi/sirius",
+        "revision":     "timobaka"
+    },
+    {
+        "remote":       "nyanpasu",
+        "repository":   "hardware_qcom_audio",
+        "target_path":  "vendor/qcom/opensource/audio-hal/primary-hal",
+        "revision":     "timobaka-845"
+    },
+    {
+        "remote":       "nyanpasu",
+        "repository":   "hardware_qcom_display",
+        "target_path":  "hardware/qcom/display",
+        "revision":     "timobaka-845"
+    },
+    {
+        "remote":       "nyanpasu",
+        "repository":   "hardware_qcom_media",
+        "target_path":  "hardware/qcom/media",
+        "revision":     "timobaka-845"
+    },
+]
