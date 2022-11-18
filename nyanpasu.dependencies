@@ -2,7 +2,7 @@
     {
         "remote":       "nyanpasu",
         "repository":   "kernel_xiaomi_sirius",
-        "target_path":  "kernel/xiaomi/sirius",
+        "target_path":  "kernel/msm-4.9",
         "revision":     "timobaka"
     },
     {
