@@ -251,15 +251,13 @@ PRODUCT_PACKAGES += \
 
 # Init scripts
 PRODUCT_PACKAGES += \
-    fstab.qcom \
     init.qcom.early_boot.sh \
     init.qcom.post_boot.sh \
-    init.qcom.rc \
-    init.qcom.power.rc \
     init.qcom.sensors.sh \
     init.qcom.sh \
-    init.qcom.usb.rc \
-    init.qcom.usb.sh \
+    fstab.qcom \
+    init.qcom.rc \
+    init.qcom.power.rc \
     init.recovery.qcom.rc \
     init.target.rc \
     ueventd.qcom.rc
