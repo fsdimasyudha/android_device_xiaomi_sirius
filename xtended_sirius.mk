@@ -7,6 +7,13 @@
 $(call inherit-product, device/xiaomi/sirius/device.mk)
 
 # Boot Animation
+XTENDED_BUILD_TYPE := UNOFFICIAL
+XTENDED_BUILD_MAINTAINER := dimasyudha
+XTENDED_BUILD_DONATE_URL := https://www.paypal.com/paypalme/yudhadimas
+PROCESSOR_MODEL := SDM710
+WITH_GAPPS := true
+TARGET_INCLUDE_EXTRA_GAPPS := true
+TARGET_FACE_UNLOCK_SUPPORTED := true
 TARGET_BOOT_ANIMATION_RES := 1080
 
 # Inherit some common Lineage stuff.
