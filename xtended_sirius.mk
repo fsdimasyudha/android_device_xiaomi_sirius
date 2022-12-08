@@ -4,7 +4,7 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-$(call inherit-product, device/xiaomi/sirius/sirius.mk)
+$(call inherit-product, device/xiaomi/sirius/device.mk)
 
 # Boot Animation
 TARGET_BOOT_ANIMATION_RES := 1080
